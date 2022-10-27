@@ -6,3 +6,5 @@
 Горнер
 2 Таблицы excel
 Auto mouse 1
+
+
