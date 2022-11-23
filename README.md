@@ -25,5 +25,7 @@ Auto mouse 1
 
 ![image](https://user-images.githubusercontent.com/84030509/198190446-f808785d-f464-4233-b28d-10470b9b175b.png)
 
+ $$(A\vee B)\wedge C = (A\wedge C)\vee(B\wedge C)$$
+
 
 ![image](https://user-images.githubusercontent.com/84030509/200734701-ae975610-bb3c-4179-8be9-1740ba991e07.png)
