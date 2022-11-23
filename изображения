@@ -1,0 +1,10 @@
+from PIL import Image, ImageDraw, ImageFont
+im = Image.new('RGB', (500,500), color=('#0000CD'))
+font = ImageFont.truetype('C:\Windows\Fonts\SCRIPTBL.TTF', size=18)
+draw_text = ImageDraw.Draw(im)
+draw_text.text(
+    (250,250),
+    'прикол',
+     font=font,
+    fill=('#FF0000'))
+im.show()
