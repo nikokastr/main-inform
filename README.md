@@ -8,6 +8,10 @@
 
 Auto mouse 1
 
+Код Хемминга 
+
+Морзе
+
 
 ![image](https://user-images.githubusercontent.com/84030509/198190446-f808785d-f464-4233-b28d-10470b9b175b.png)
 
