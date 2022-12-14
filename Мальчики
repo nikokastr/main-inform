@@ -1,0 +1,13 @@
+def f(fam):
+    print(fam[::-1])
+    
+def n(pol, a):
+    a =pol +" "+(fam[::-1])
+    return(a)
+
+fam= input('Напишите фамилию:')
+f(fam)
+a = str()
+pol = input("Напишите пол:")
+n(pol, a)
+print(n(pol, a))
