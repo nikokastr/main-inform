@@ -1,0 +1,23 @@
+from itertools import product
+tab=[
+     [],
+     [712],
+     [673,1385],
+     [1075,1800,1499],
+     [875,1577,239,1287],
+     [1622,2348,2046,551,1835],
+     [423,1128,244,1266,442,1813]]
+
+nums='0123456'
+maxi=0
+ways=product(nums,repeat=7)
+for way in ways:
+    SUM=0
+    if len(set(way))==7 and all(way.count(x)==1 for x in way):
+        for el in range(len(way)-1):
+            if way[el]< way[el+1] :
+                SUM+=tab  [int(way[el+1])]  [int(way[el])]
+            else:
+                SUM+=tab  [int(way[el]) ]  [int(way[el+1]) ]
+        if SUM>maxi:maxi=SUM
+print(maxi)
