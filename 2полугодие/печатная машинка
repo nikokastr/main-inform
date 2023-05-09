@@ -1,0 +1,33 @@
+# Инициализация
+
+literI=["*   *","*  **","* * *","**  *","*   *"]
+literM=["*   *","** **","* * *","*   *","*   *"]
+FStr=str()
+OutStr=['','','','','']
+
+# ввод строки
+
+InStr=str(input('Введите строку из символов М и И = '))
+
+# Проверка строки и преведение её в нужный вид
+
+InStr=InStr.upper()
+for i in range(len(InStr)):
+    if InStr[i] == "М" or InStr[i] == "И":
+        FStr = FStr+InStr[i]
+    else:
+        print(f"Символ {InStr[i]} не соответствует условиям ввода и уделенн из строки вывода.")
+        
+# Соберем 5 строк * из символом строки FStr
+
+print()
+if len(FStr)>0:
+    for s in range(5):
+        for i in range(len(FStr)):
+            if ord(FStr[i]) == 1052:
+                OutStr[s] = OutStr[s]+literM[s]+" "
+            elif ord(FStr[i]) == 1048:   
+                OutStr[s] = OutStr[s]+literI[s]+" "
+        print (f"- {OutStr[s]} -")
+else:
+    print("Упс! Мне нечего вам вывести.")

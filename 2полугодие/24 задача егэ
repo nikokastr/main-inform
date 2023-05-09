@@ -1,0 +1,15 @@
+
+cnt = 0
+kmax = 0
+with open('24.txt') as f:
+    S = f.readline().replace('C','S').replace('D','S').replace('F','S')
+    S = S.replace('A','G').replace('O','G')
+    S = S.replace('SG','*')
+    for i in range(len(S)):
+        if S[i] == '*':
+            cnt +=1
+            kmax = max(kmax,cnt)
+        else:
+            cnt = 0
+    print(kmax)
+    
