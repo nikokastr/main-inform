@@ -1,0 +1,30 @@
+## Школа
+class Human:
+    def __init__(self,age,height,fname):
+        self.fname = fname
+        self.age = age
+        self.height = height
+class Teacher(Human):
+    def __init__(self,fname,age,height,characteristic):
+        super().__init__(age,height,fname)
+        self.characteristic = characteristic
+class Student(Human):
+    def __init__(self,fname,age,height,characteristic):
+        super().__init__(age,height,fname)
+        self.characteristic = characteristic
+
+    
+    ##def Teach(self,data)
+
+NP = Teacher('Нат.Пав.','50','160','Преподает алгебру геометрию')
+print("Имя:", NP.fname, '\n' "Возраст:", NP.age, '\n' "Рост:", NP.height, '\n' "Характиристика:", NP.characteristic,'\n')
+AS = Student('Арс. Ст.', '17','175','Не доделал вариант по физике')
+print("Имя:", AS.fname, '\n' "Возраст:", AS.age, '\n' "Рост:", AS.height, '\n' "Характиристика:", AS.characteristic,'\n')
+'''
+
+
+class data:
+    def __init__(self,...)
+
+
+'''
