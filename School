@@ -1,4 +1,5 @@
-## Школа
+# Школа
+lv = 0
 class Human:
     def __init__(self,age,height,fname):
         self.fname = fname
@@ -7,24 +8,36 @@ class Human:
 class Teacher(Human):
     def __init__(self,fname,age,height,characteristic):
         super().__init__(age,height,fname)
-        self.characteristic = characteristic
+        self.char = characteristic
+    def givedate(self,datesub,a):
+        print("Учитель:",NP.fname, "Введет:", Math.subject,AS.fname)
+        a.datesub = datesub
+        
 class Student(Human):
     def __init__(self,fname,age,height,characteristic):
         super().__init__(age,height,fname)
-        self.characteristic = characteristic
+        self.char = characteristic
+    def takedate(self,datesub,lv):
+        print("Ученик:",AS.fname,"Изучил",Math.subject,"посещения", lv)
 
-    
-    ##def Teach(self,data)
+class Data:
+    def __init__(self,subject):
+        self.subject = subject 
 
+#создание обьектов(инициальзация)
 NP = Teacher('Нат.Пав.','50','160','Преподает алгебру геометрию')
-print("Имя:", NP.fname, '\n' "Возраст:", NP.age, '\n' "Рост:", NP.height, '\n' "Характиристика:", NP.characteristic,'\n')
+print("Имя:", NP.fname, '\n' "Возраст:", NP.age, '\n' "Рост:", NP.height, '\n' "Характиристика:", NP.char,'\n')
 AS = Student('Арс. Ст.', '17','175','Не доделал вариант по физике')
-print("Имя:", AS.fname, '\n' "Возраст:", AS.age, '\n' "Рост:", AS.height, '\n' "Характиристика:", AS.characteristic,'\n')
-'''
+print("Имя:", AS.fname, '\n' "Возраст:", AS.age, '\n' "Рост:", AS.height, '\n' "Характиристика:", AS.char,'\n')
 
+#Создание предмета как обьект
+Math = Data('Математика')
 
-class data:
-    def __init__(self,...)
+#Введение урока
+lv += 1
+NP.givedate(Math,AS)
+AS.takedate(Math,lv)
 
-
-'''
+lv += 1
+NP.givedate(Math,AS)
+AS.takedate(Math,lv)
