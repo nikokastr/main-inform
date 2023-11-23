@@ -9,35 +9,53 @@ class Teacher(Human):
     def __init__(self,fname,age,height,characteristic):
         super().__init__(age,height,fname)
         self.char = characteristic
-    def givedate(self,datesub,a):
-        print("Учитель:",NP.fname, "Введет:", Math.subject,AS.fname)
+    def givedate(self,Fn,datesub,a):
+        print("Учитель:",Fn.fname, "Введет:", datesub.subject,a.fname)
         a.datesub = datesub
         
 class Student(Human):
     def __init__(self,fname,age,height,characteristic):
         super().__init__(age,height,fname)
         self.char = characteristic
-    def takedate(self,datesub,lv):
-        print("Ученик:",AS.fname,"Изучил",Math.subject,"посещения", lv)
+    def takedate(self,I,datesub,lv):
+        print("Ученик:",I.fname,"Изучил",datesub.subject,"посещения", lv)
+    def Cldata(self,I,data,a):
+        CLD=[data(0),data(1)]
+        pass
 
 class Data:
     def __init__(self,subject):
-        self.subject = subject 
+        DT = ["физика","математика","информатика"]
+        self.subject = DT[subject]
 
-#создание обьектов(инициальзация)
+#создание обьектов(инициальзация)(учителей)
 NP = Teacher('Нат.Пав.','50','160','Преподает алгебру геометрию')
 print("Имя:", NP.fname, '\n' "Возраст:", NP.age, '\n' "Рост:", NP.height, '\n' "Характиристика:", NP.char,'\n')
+
+PV = Teacher('Пав.Св.', '39','178','Ведет информатику')
+print("Имя:", PV.fname, '\n' "Возраст:", PV.age, '\n' "Рост:", PV.height, '\n' "Характиристика:", PV.char,'\n')
+
+#создание обьектов(инициальзация)(учеников)
 AS = Student('Арс. Ст.', '17','175','Не доделал вариант по физике')
 print("Имя:", AS.fname, '\n' "Возраст:", AS.age, '\n' "Рост:", AS.height, '\n' "Характиристика:", AS.char,'\n')
 
+
 #Создание предмета как обьект
-Math = Data('Математика')
+Math = Data(1)
+Inform = Data(2)
+
 
 #Введение урока
-lv += 1
-NP.givedate(Math,AS)
-AS.takedate(Math,lv)
+
 
 lv += 1
-NP.givedate(Math,AS)
-AS.takedate(Math,lv)
+NP.givedate(NP,Math,AS)
+AS.takedate(AS,Math,lv)
+
+lv += 1
+NP.givedate(NP,Math,AS)
+AS.takedate(AS,Math,lv)
+
+lv += 1
+PV.givedate(PV,Inform,AS)
+AS.takedate(AS,Inform,lv)
