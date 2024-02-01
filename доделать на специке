@@ -1,0 +1,57 @@
+import re
+def f1():
+    s = open("24_10105.txt").readline()
+    s = s.split('T')
+    res = 0
+    for i in range(len(s)-99):
+        c = 'T'.join(s[i:i+101])
+        res = max(res,len(c))
+    print("Максимальное:",res)
+def f2():
+    s = open("24_10105.txt").readline()
+    s = s.split('T')
+    res = 0
+    for i in range(len(s)-99):
+        c = 'T'.join(s[i:i+99])
+        c = 'T'+str(c)+'T'
+        res = max(res,len(c))
+    print("Максимальное:",res)
+def f3():
+    s = open("24_10105.txt").readline()
+    s = s.split('T')
+    res = 200
+    for i in range(len(s)-99):
+        c = 'T'.join(s[i:i+99])
+        c = 'T'+str(c)+'T'
+        res = min(res,len(c))
+    print("Минимальное:",res)
+
+    
+def f4():
+    s = open("24.txt").readline()
+    counter = 1
+    counterglas = 0
+    res = 0
+    for i in range(len(s)-1):
+        if (s[i]<s[i+1]):
+            if ((s[i] == 'A') or (s[i] == 'E') or (s[i] == 'I') or (s[i] == 'O') or (s[i] == 'U') or (s[i] == 'Y')):
+                if counterglas>=2:
+                    counterglas = 1
+                    counter = 1
+                else:
+                    counterglas += 1
+                    counter += 1
+                    res = max(res,counter)
+            else:
+                counter += 1 
+                res = max(res,counter)
+        else:
+            counter = 1
+    print(res)
+
+def f5():
+    s = open("24_12476 (1).txt").readline()
+    re.findall(r'[P,E,G](RO){21}[P,E,G]',s)
+f5()
+
+
