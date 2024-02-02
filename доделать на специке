@@ -51,7 +51,13 @@ def f4():
 
 def f5():
     s = open("24_12476 (1).txt").readline()
-    re.findall(r'[P,E,G](RO){21}[P,E,G]',s)
+    while ("ROR" or "ORO") in s:
+        s = s.replace("ROR","RO OR").replace("ORO","OR RO")
+    s = s.split()
+    c = []
+    for i in s:
+        if i.count("RO")==22:
+            c.append(len(i)-1)
+    print(max(c))          
 f5()
-
 
